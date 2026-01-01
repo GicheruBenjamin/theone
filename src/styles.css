@@ -1,0 +1,37 @@
+
+/*styles.css*/
+/*Fonts from Google Fonts Roboto and poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    font-size : 10px; /*Base 10 for rems*/
+
+    /*Colors*/
+    --color-tealdark: #005461;
+    --color-tealmid : #018790;
+    --color-teallight: #00B7B5;
+    --color-grey: #F4F4F4;
+
+
+
+    --color-danger : Red;
+    --color-success : Green;
+    --color-warning : Yellow;
+    --color-info : Blue;
+
+    /*Typography*/
+    --font-roboto : 'Roboto', sans-serif;
+    --font-poppins : 'Poppins', sans-serif;
+}
+
+*{
+    box-sizing: border-box ;
+}
+
+body{
+    margin: 0; padding: 0;
+    background-color: var(--color-grey);
+}
+
