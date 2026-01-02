@@ -13,8 +13,7 @@
     --color-tealmid : #018790;
     --color-teallight: #00B7B5;
     --color-grey: #F4F4F4;
-
-
+    --color-grey-dark : #DDDDDD;
 
     --color-danger : Red;
     --color-success : Green;
@@ -34,4 +33,10 @@ body{
     margin: 0; padding: 0;
     background-color: var(--color-grey);
 }
-
+a{
+    background-color: var(--color-teallight);
+    color: var(--color-tealdark);
+}
+P{
+    font-family: (var(--font-poppins));
+}
