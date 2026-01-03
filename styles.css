@@ -33,10 +33,3 @@ body{
     margin: 0; padding: 0;
     background-color: var(--color-grey);
 }
-a{
-    background-color: var(--color-teallight);
-    color: var(--color-tealdark);
-}
-P{
-    font-family: (var(--font-poppins));
-}
