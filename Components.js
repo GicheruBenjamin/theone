@@ -51,76 +51,94 @@ function Component(tag, props = {}) {
     return element;
 }
 
-const Home = Component("div", {
-    className : "homepage",
-    children : [
-        Component("h1",
-            {
-                text : "Welcome to theone",
-                className: "hero",
-            }
-        )
-    ]
-})
 
-const About = Component("div",{
-    className : "aboutpage",
-    children : [
-        Component("h1",
-            {
-                text : "Here one is allowed to have access to some data",
-                className : "hero"
-            }
-        )
-    ]
-})
+function renderHome(){
+    // Create a homepage
+    const Home = Component("div",{
+        className : "page",
+        children : [
+            Component("h1",{
+                text : "TheOne"
+            }),
+            Component("p",{
+                text : "Welcome to TheOne"
+            })
+        ]
+    })
+    return Home
+}
 
-const Login = Component("div",{
-    className : "loginpage",
-    children : [
-        Component("h1",
-            {
+function renderAbout(){
+    // Create a about page
+    const About = Component("div",{
+        className : "page",
+        children : [
+            Component("h1",{
+                text : "About"
+            }),
+            Component("p",{
+                text : "You are the one because u can access some data"
+            })
+        ]
+    })
+    return About
+}
+
+function renderLoginform(){
+    let Loginform = Component("form",{
+        className : "loginform",
+        children : [
+            Component("label",{
+                text : "Username",
+                className : "loginformlabel"
+            }),
+            Component("input",{
+                className : "loginforminput",
+                attributes : {
+                    type : "text",
+                    name : "username",
+                    placeholder : "Username"
+                }
+            }),
+            Component("label",{
+                text : "Email",
+                className : "loginformlabel"
+            }),
+            Component("input",{
+                className : "loginforminput",
+                attributes : {
+                    type : "email",
+                    name : "email",
+                    placeholder : "Email"
+                }
+            }),
+            Component("button",{
                 text : "Login",
-                className : "hero"
-            }
-        ),
-        Component("form",
-            {
-                className : "loginform",
-                events : {
-                    "submit" : (e) => {
-                        e.preventDefault();
-                        console.log("Login submitted");
-                    }
-                },
-                children : [
-                    Component("input",
-                        {
-                            className : "inputusername",
-                            attributes : {
-                                name : "username",
-                                required : true,
-                                type : "text",
-                                placeholder : "Username"
-                            }
-                        }
-                    ),
-                    Component("input",
-                        {
-                            className : "inputemail",
-                            attributes : {
-                                name : "email",
-                                required : true,
-                                type : "email",
-                                placeholder : "Email"
-                            }
-                        }
-                    )
-                ]
-            }
-        )
-    ]
-})
+                className : "loginformbutton",
+                attributes : {
+                    type : "submit"
+                }
+            })
+        ]})
+        return Loginform
+}
+
+function renderLogin(){
+    // Create a login page
+    const Login = Component("div",{
+        className : "page",
+        children : [
+            Component("h1",{
+                text : "Login"
+            }),
+            Component("p",{
+                text : "You are the one because u can access some data"
+            },),
+            renderLoginform()
+        ]
+    })
+    return Login
+}
 
 const header = Component("header",
     {
@@ -170,22 +188,15 @@ const header = Component("header",
     }
 )
 
+const Slot = Component("div",{
+    className : "slot",
+})
+
 const Homelayout = Component("div",{
     className : "homelayout",
     children : [
         header,
-        Component("div",
-            {
-                className : "slot",
-                children : [
-                    Component("div",
-                        {
-                            className : "slotcontent",
-                        }
-                    )
-                ]
-            }
-        )
+        Slot,
     ]
 })
 
@@ -244,34 +255,10 @@ const DashboardLayout = Component("div",{
     className : "dashboardlayout",
     children : [
         Dashbordsidebar,
-        Component("div",
-            {
-                className : "slot",
-                children : [
-                    Component("div",
-                        {
-                            className : "slotcontent",
-                            children : [
-                                Component("div",
-                                    {
-                                        className : "dashboardcontent",
-                                        children : [
-                                            Dashbordsidebar,
-                                            Component("div",
-                                                {
-                                                    className : "dashbaordmaincontent",
-                                                    children : []
-                                                }
-                                            )
-                                        ]    
-                                    }
-                                )
-                            ]
-                        }
-                    )
-                ]
-            }
-        )
+        Slot,
     ]
 })
 
+function renderPage(layout, component){
+
+}
