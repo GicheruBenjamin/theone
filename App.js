@@ -1,5 +1,4 @@
 // App.js
-import { runTests } from "./tests.js";
-
-console.log("TheOne App");
-runTests();
+import { initRouter } from "./router.js";
+const app = document.getElementById("app");
+initRouter(app);

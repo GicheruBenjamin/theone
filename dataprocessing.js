@@ -41,7 +41,7 @@ export async function getuserpostsandcomments(userId,posts,comments) {
     if (userPosts.length === 0) {
         return {
             ok: false,
-            message: "Failed",
+            message: "Failed to find posts",
             data: null
         };
     }
@@ -71,7 +71,7 @@ export async function getusertodos(userId,todos) {
     if (userTodos.length === 0) {
         return {
             ok: false,
-            message: "Failed",
+            message: "Failed to find todos",
             data: null
         };
     }
