@@ -1,4 +1,7 @@
 // App.js
-import { initRouter } from "./router.js";
+
+import { renderDashboardlayout } from "./Components.js";
+
 const app = document.getElementById("app");
-initRouter(app);
+
+app.appendChild(renderDashboardlayout());
