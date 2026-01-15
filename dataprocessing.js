@@ -1,6 +1,6 @@
 // dataprocessing.js
 
-export async function loginuser(logindata, users){
+export function loginuser(logindata, users){
  // Users is a list of objects 
  // logindata is an object with username and email
  // find the user with the email and username
@@ -29,7 +29,7 @@ export async function loginuser(logindata, users){
 
 }
 
-export async function getuserpostsandcomments(userId,posts,comments) {
+export function getuserpostsandcomments(userId,posts,comments) {
     // posts and comments are lists of objects
     // userId is the id of the user
     // return {ok:true, message:"Success", data:{posts of that iserId and comments of that postId}}
@@ -59,7 +59,7 @@ export async function getuserpostsandcomments(userId,posts,comments) {
     };
 }
 
-export async function getusertodos(userId,todos) {  
+export  function getusertodos(userId,todos) {  
     // todos is a list of objects
     // userId is the id of the user
     // return {ok:true, message:"Success", data:{todos of that userId}}
@@ -84,7 +84,7 @@ export async function getusertodos(userId,todos) {
 
 }
 
-export async function getuseralbumsandphotos(userId,albums,photos) {
+export  function getuseralbumsandphotos(userId,albums,photos) {
     // albums and photos are lists of objects
     // userId is the id of the user
     // return {ok:true, message:"Success", data:{albums of that userId and photos of that albumId}}
