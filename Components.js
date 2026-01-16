@@ -1,6 +1,6 @@
 // Components.js
 
-function Component(tag, props = {}) {
+export function Component(tag, props = {}) {
     const element = document.createElement(tag);
 
     // Text
@@ -150,12 +150,6 @@ export function renderLoginpage(){
     return Login
 }
 
-function changepage(layout,page){
-    const slot = layout.querySelector(".slot");
-    slot.innerHTML = "";
-    slot.appendChild(page());
-}
-
 function renderheader(){
     return Component("header",
         {
@@ -177,11 +171,6 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/"
-                                    },
-                                    events : {
-                                        click : ()=>{
-                                            changepage(renderHomelayout(),renderHomepage());
-                                        }
                                     }
                                 }
                             ),
@@ -191,11 +180,6 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/about"
-                                    },
-                                    events : {
-                                        click : ()=>{
-                                            changepage(renderHomelayout(),renderAboutpage());
-                                        }
                                     }
                                 }
                             ),
@@ -205,11 +189,6 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/login"
-                                    },
-                                    events : {
-                                        click : ()=>{
-                                            changepage(renderHomelayout(),renderLoginpage());
-                                        }
                                     }
                                 }
                             )                        
