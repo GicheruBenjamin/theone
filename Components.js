@@ -150,6 +150,12 @@ export function renderLoginpage(){
     return Login
 }
 
+function changepage(layout,page){
+    const slot = layout.querySelector(".slot");
+    slot.innerHTML = "";
+    slot.appendChild(page());
+}
+
 function renderheader(){
     return Component("header",
         {
@@ -171,6 +177,11 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/"
+                                    },
+                                    events : {
+                                        click : ()=>{
+                                            changepage(renderHomelayout(),renderHomepage());
+                                        }
                                     }
                                 }
                             ),
@@ -180,6 +191,11 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/about"
+                                    },
+                                    events : {
+                                        click : ()=>{
+                                            changepage(renderHomelayout(),renderAboutpage());
+                                        }
                                     }
                                 }
                             ),
@@ -189,6 +205,11 @@ function renderheader(){
                                     className : "headernavitem",
                                     attributes : {
                                         href : "/login"
+                                    },
+                                    events : {
+                                        click : ()=>{
+                                            changepage(renderHomelayout(),renderLoginpage());
+                                        }
                                     }
                                 }
                             )                        
@@ -225,6 +246,10 @@ function renderDashboardsidebar(){
             className : "dashbordsidebar",
             // Buttons for the dashboard Overview , posts , todos and albums
             children : [
+                Component("h3",{
+                    text : "TheOne",
+                    className: "headertitle"
+                }),
                 Component("div",
                     {
                         className : "dashbordsidebarbuttons",
@@ -262,6 +287,15 @@ function renderDashboardsidebar(){
                                     className : "dashbordsidebarbutton",
                                     attributes : {
                                         href : "/user/albums"
+                                    }
+                                }
+                            ),
+                            Component("button",
+                                {
+                                    text : "Logout",
+                                    className : "dashbordsidebarbutton",
+                                    attributes : {
+                                        href : "/"
                                     }
                                 }
                             )
