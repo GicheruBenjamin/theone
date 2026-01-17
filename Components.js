@@ -203,6 +203,9 @@ function renderheader(){
 function createSlot(){
     const Slot = Component("div",{
         className : "slot",
+        attributes : {
+            id : "slot"
+        }
     })
     return Slot
 }
