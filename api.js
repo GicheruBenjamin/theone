@@ -15,8 +15,8 @@ export async function getapidata(label) {
                 data: null
             };
         }
-        
-        const labels = ["users", "posts", "comments", "albums", "todos"];
+
+        const labels = ["users", "posts", "comments", "albums", "todos", "photos"];
         if (!labels.includes(label)) {
             return {
                 ok: false,
