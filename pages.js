@@ -51,7 +51,6 @@ export function renderLoginpage(){
             Component("p",{
                 text : "Be TheOne."
             },),
-            renderLoginform()
         ]
     })
     return Login

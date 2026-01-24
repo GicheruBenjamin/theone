@@ -1,7 +1,7 @@
 // App.js
 
-import { createApp } from "./createApp.js";
+import { renderHomepage, renderAboutpage, renderLoginpage } from "./pages.js"
+
 const app = document.getElementById("app");
 
-createApp(app);
-
+app.appendChild(renderHomepage());
