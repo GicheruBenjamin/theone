@@ -1,8 +1,7 @@
 // login.js
+import  Component  from "./Components.js"
 
-import { Component } from "./Components.js"
-
-export function renderLoginform(){
+export function Loginform(){
     let Loginform = Component("form",{
         className : "loginform",
         children : [

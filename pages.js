@@ -1,10 +1,8 @@
 // pages.js
 
-import { Component } from "./Components.js"
-import { renderLoginform } from "./login.js"
+import  Component  from "./Components.js"
 
-
-export function renderHomepage(){
+export function Homepage(){
     // Create a homepage
     const Home = Component("div",{
         className : "page",
@@ -22,7 +20,7 @@ export function renderHomepage(){
     return Home
 }
 
-export function renderAboutpage(){
+export function Aboutpage(){
     // Create a about page
     const About = Component("div",{
         className : "page",
@@ -40,7 +38,7 @@ export function renderAboutpage(){
     return About
 }
 
-export function renderLoginpage(){
+export function Loginpage(){
     // Create a login page
     const Login = Component("div",{
         className : "page",
