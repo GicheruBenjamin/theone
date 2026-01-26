@@ -1,10 +1,10 @@
-// api.js  
+// Api.js  
 
 // Responsible of Api interaction.
 
 const url = "https://jsonplaceholder.typicode.com";
 
-export async function getapidata(label) {
+export default async function getApiData(label) {
     try {
 
         //Check if the label is valid

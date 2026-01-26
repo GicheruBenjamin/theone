@@ -1,6 +1,6 @@
 // Components.js
 
-export function Component(tag, props = {}) {
+export default function Component(tag, props = {}) {
     const element = document.createElement(tag);
 
     // Text

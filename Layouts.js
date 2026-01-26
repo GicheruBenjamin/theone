@@ -1,12 +1,12 @@
-// layouts.js
+// Layouts.js
 
 import { Component } from "./Components.js"
 
 
-function renderLink(to){
+function Link(to){
 }
 
-function renderheader(){
+function Header(){
     return Component("header",
         {
             className : "header",
@@ -67,7 +67,7 @@ function createSlot(){
 }
 
 
-export function renderHomelayout(){
+export function Homelayout(){
     const Slot = createSlot()
     const Homelayout = Component("div",{
         className : "homelayout",
@@ -79,7 +79,7 @@ export function renderHomelayout(){
     return Homelayout
 }
 
-function renderDashboardsidebar(){
+function Dashboardsidebar(){
     return Component("div",{
             className : "dashbordsidebar",
             // Buttons for the dashboard Overview , posts , todos and albums
@@ -145,12 +145,12 @@ function renderDashboardsidebar(){
     )
 }
 
-export function renderDashboardlayout(){
+export function Dashboardlayout(){
     const Slot = createSlot()
     const DashboardLayout = Component("div",{
         className : "dashboardlayout",
         children : [
-            renderDashboardsidebar(),
+            Dashboardsidebar(),
             Slot,
         ]
     })
@@ -158,6 +158,3 @@ export function renderDashboardlayout(){
 }
 
 
-export function router(app){
-    
-}
