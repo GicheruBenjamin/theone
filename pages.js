@@ -1,55 +1,49 @@
 // pages.js
+import Component from "./Components.js";
+import {
+  homepagecontent,
+  aboutpagecontent,
+  loginpagecontent
+} from "./content.js";
 
-import  Component  from "./Components.js"
-
-export function Homepage(){
-    // Create a homepage
-    const Home = Component("div",{
-        className : "page",
-        children : [
-            Component("h1",{
-                className : "pageheader",
-                text : "TheOne"
-            }),
-            Component("p",{
-                className : "pagedescription",
-                text : "Welcome to TheOne."
+function Section(title, lines) {
+  return Component("section", {
+    children: [
+      Component("h2", { text: title }),
+      ...lines.map(line =>
+        typeof line === "string"
+          ? Component("p", { text: line })
+          : Component("p", {
+              children: Object.entries(line).map(
+                ([key, value]) =>
+                  Component("a", {
+                    text: `${key}: ${value}`,
+                    attributes: { href: value, target: "_blank" }
+                  })
+              )
             })
-        ]
-    })
-    return Home
+      )
+    ]
+  });
 }
 
-export function Aboutpage(){
-    // Create a about page
-    const About = Component("div",{
-        className : "page",
-        children : [
-            Component("h1",{
-                className : "pageheader",
-                text : "About"
-            }),
-            Component("p",{
-                className : "pagedescription",
-                text : "You are TheOne because u can access some data."
-            })
-        ]
-    })
-    return About
+export function HomePage(container) {
+  container.append(
+    Section("Home", homepagecontent.hero),
+    Section("About", homepagecontent.about),
+    Section("Contact", homepagecontent.contact)
+  );
 }
 
-export function Loginpage(){
-    // Create a login page
-    const Login = Component("div",{
-        className : "page",
-        children : [
-            Component("h1",{
-                text : "Login"
-            }),
-            Component("p",{
-                text : "Be TheOne."
-            },),
-        ]
-    })
-    return Login
+export function AboutPage(container) {
+  container.append(
+    Section("About TheOne", aboutpagecontent.hero),
+    Section("More About TheOne", aboutpagecontent.about)
+  );
+}
+
+export function LoginPage(container) {
+  container.append(
+    Section("Info", loginpagecontent.hero)
+  );
 }
