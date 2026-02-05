@@ -8,7 +8,7 @@ export default function Component(tag, props = {}) {
         element.textContent = props.text;
     }
 
-    // Properties (value, id, checked, etc.)
+    // Properties
     if (props.props) {
         Object.assign(element, props.props);
     }
@@ -18,9 +18,18 @@ export default function Component(tag, props = {}) {
         Object.assign(element.style, props.styles);
     }
 
-    // Class
+    // Class (string or array)
     if (props.className) {
-        element.className = props.className;
+        if (Array.isArray(props.className)) {
+            element.classList.add(...props.className);
+        } else {
+            element.className = props.className;
+        }
+    }
+
+    // Dataset
+    if (props.dataset) {
+        Object.assign(element.dataset, props.dataset);
     }
 
     // Attributes
@@ -30,29 +39,32 @@ export default function Component(tag, props = {}) {
         });
     }
 
-    // Events
+    // Events (with options)
     if (props.events) {
-        Object.entries(props.events).forEach(([event, handler]) => {
-            element.addEventListener(event, handler);
+        Object.entries(props.events).forEach(([event, value]) => {
+            if (typeof value === "function") {
+                element.addEventListener(event, value);
+            } else {
+                element.addEventListener(event, value.handler, value.options);
+            }
         });
     }
 
     // Children
     if (props.children) {
         props.children.forEach(child => {
-            if (typeof child === "string") {
-                element.appendChild(document.createTextNode(child));
-            } else {
-                element.appendChild(child);
-            }
+            element.append(
+                typeof child === "string"
+                    ? document.createTextNode(child)
+                    : child
+            );
         });
+    }
+
+    // Ref (escape hatch)
+    if (props.ref && typeof props.ref === "function") {
+        props.ref(element);
     }
 
     return element;
 }
-
-
-
-
-
-
