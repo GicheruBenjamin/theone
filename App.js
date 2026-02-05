@@ -1,6 +1,11 @@
 // App.js
 
 import Image from "./Image.js";
+import {
+    HomePage,
+    AboutPage,
+    LoginPage
+} from "./pages.js";
 
 const app = document.getElementById("app");
 
@@ -13,3 +18,8 @@ app.append(
         className: "image"
     })
 );
+
+HomePage(app);
+AboutPage(app); 
+LoginPage(app);
+

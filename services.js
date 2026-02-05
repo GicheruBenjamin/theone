@@ -10,7 +10,9 @@
 
 import { getapidata } from "./api.js"
 
-export async function login(data = {}){}
+export async function login(data = {}){
+    
+}
 
 export async function getUserOverview(userId){}
 
