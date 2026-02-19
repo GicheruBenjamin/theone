@@ -21,6 +21,8 @@ async function Login(username, email) {
     u => u.username === username && u.email === email
   );
 
+  localStorage.setItem("user", JSON.stringify(user));
+
   if (user) {
     return {
       ok: true,
