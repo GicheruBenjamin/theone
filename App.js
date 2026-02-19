@@ -19,7 +19,5 @@ app.append(
     })
 );
 
-HomePage(app);
-AboutPage(app); 
 LoginPage(app);
 

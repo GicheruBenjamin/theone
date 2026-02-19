@@ -6,6 +6,8 @@ import {
   loginpagecontent
 } from "./content.js";
 
+import Loginform from "./login.js";
+
 function Section(title, lines) {
   return Component("section", {
     children: [
@@ -46,4 +48,5 @@ export function LoginPage(container) {
   container.append(
     Section("Info", loginpagecontent.hero)
   );
+  container.append(Loginform());
 }
