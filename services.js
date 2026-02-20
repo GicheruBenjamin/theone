@@ -7,8 +7,7 @@
 4. getUserAlbumsandPhotos(userId)
 */
 
-import { getapidata } from "./api.js"
-
+import getApiData from "./Api.js";
 
 export async function getUserOverview(userId) {
     if (!userId) {
