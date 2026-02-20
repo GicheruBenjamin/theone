@@ -6,6 +6,7 @@ import {
     AboutPage,
     LoginPage
 } from "./pages.js";
+import { UserOverview } from "./Dashboardcomponents.js";
 
 const app = document.getElementById("app");
 
@@ -20,4 +21,8 @@ app.append(
 );
 
 LoginPage(app);
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+console.log(user);
 

@@ -20,17 +20,17 @@ async function Login(username, email) {
   const user = users.find(
     u => u.username === username && u.email === email
   );
-
-  localStorage.setItem("user", JSON.stringify(user));
-
+  
   if (user) {
+    localStorage.setItem("user", JSON.stringify(user));
+  
     return {
       ok: true,
       message: "User exists",
       data: user
     };
   }
-
+  
   return {
     ok: false,
     message: "User does not exist",
