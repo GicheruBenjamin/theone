@@ -4,6 +4,8 @@
 
 const url = "https://jsonplaceholder.typicode.com";
 
+const labels = ["users", "posts", "comments", "albums", "todos", "photos"];
+
 export default async function getApiData(label) {
     try {
 
@@ -16,7 +18,6 @@ export default async function getApiData(label) {
             };
         }
 
-        const labels = ["users", "posts", "comments", "albums", "todos", "photos"];
         if (!labels.includes(label)) {
             return {
                 ok: false,
