@@ -1,10 +1,10 @@
-// services.js
+// services.js: Responsible for fetching data from jsonplaceholder.typicode.com
 
 /*
-1. getUserOverview(userId)
-2. getUserPostsandComments(userId)
-3. getUserTodos(userId)
-4. getUserAlbumsandPhotos(userId)
+1. getUserOverview(userId) : Fetches user overview
+2. getUserPostsandComments(userId) : Fetches user posts and comments
+3. getUserTodos(userId) : Fetches user todos
+4. getUserAlbumsandPhotos(userId) : Fetches user albums and photos
 */
 
 import getApiData from "./Api.js";

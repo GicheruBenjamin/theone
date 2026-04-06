@@ -1,3 +1,4 @@
+// Login.js : Responsible for logging in users
 import getApiData from "./Api.js";
 
 export default async function Login(username, email) {

@@ -1,6 +1,4 @@
-// Photos.js
-// Responsible for generating photo URLs from Lorem Picsum
-
+// Photos.js : Responsible for generating photo URLs from Lorem Picsum
 const BASE_URL = "https://picsum.photos";
 
 export default function getPhotoUrl(width, height, seed = null) {
