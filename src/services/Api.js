@@ -1,7 +1,4 @@
-// Api.js  
-
-// Responsible of Api interaction.
-
+// Api.js  :  Responsible for fetching data from jsonplaceholder.typicode.com
 const url = "https://jsonplaceholder.typicode.com";
 
 const labels = ["users", "posts", "comments", "albums", "todos", "photos"];
